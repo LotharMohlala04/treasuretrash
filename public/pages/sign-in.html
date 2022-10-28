@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Buy | Another Man's Treasure</title>
+    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/flat-ui.css" rel="stylesheet">
+    <link href="../docs/assets/css/demo.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../dist/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
+</style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row demo-row">
+        <div class="col">
+          <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
+            <a class="navbar-brand" href="../index.html">Another Man's Treasure <img src="../dist/favicon.ico"></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+              <ul class="nav navbar-nav mr-auto">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listing</a>
+                  <span class="dropdown-arrow"></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Buy</a></li>
+                    <li><a href="#">Recycle</a></li>
+                    <li><a href="#">Eliminate</a></li>
+                  </ul>
+                </li>
+                <li><a href="#fakelink">About Us</a></li>
+               </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav><!-- /navbar -->
+        </div>
+      </div> <!-- /row -->
+
+          
+
+
+      <div class="row demo-sub-section">
+        <div class="tile-details">
+            <h4 style="text-align:center">Sign In to continue</h4>
+        <form action="/action_page.php">
+            <div class="row">
+        
+              <div class="col">
+                <a href="#" class="fb btn">
+                  <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                 </a>
+                <a href="#" class="twitter btn">
+                  <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                </a>
+                <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                  </i> Login with Google+
+                </a>
+
+                  <p>Or sign in manually:</p>
+        
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+              </div>
+              
+            </div>
+          </form>
+        </div>
+      </div> <!-- /tiles -->
+
+    </div>
+</div>
+
+    </div> <!-- /container -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-7">
+            <h3 class="footer-title">Another Man's Treasure</h3>
+            <p>Do you like this freebie? Want to get more stuff like this?<br/>
+              Subscribe to designmodo news and updates to stay tuned on great designs.<br/>
+            </p>
+          </div> <!-- /col-7 -->
+
+          <div class="col-5">
+            <div class="footer-banner">
+              <h3 class="footer-title">Get Flat UI Pro</h3>
+              <ul>
+                <li>Tons of Basic and Custom UI Elements</li>
+                <li>A Lot of Useful Samples</li>
+                <li>More Vector Icons and Glyphs</li>
+                <li>Pro Color Swatches</li>
+                <li>Bootstrap Based HTML/CSS/JS Layout</li>
+              </ul>
+              Go to: <a href="https://designmodo.com/flat" target="_blank">designmodo.com/flat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 requires Popper.js -->
+    <script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+    <script src="../dist/scripts/flat-ui.js"></script>
+    <script src="../docs/assets/js/application.js"></script>
+
+  </body>
+</html>
