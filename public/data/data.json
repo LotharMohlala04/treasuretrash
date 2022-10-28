@@ -1,0 +1,43 @@
+{
+    "user": {
+        "name": "Bobo",
+        "surname": "Jaan",
+        "email": "bobo@jaan.com"
+    },
+    "listing": [
+        {
+            "price": "0.00",
+            "location": "4 Sandown Valley Cres, Sandown, Sandton, 2031",
+            "description": "Wooden pallettes, don't want anything for them, please feel free to take them off my hands",
+            "weight": "123 Kg",
+            "imgUrls": ["http://southseeds.org/wp-content/uploads/2015/07/IMGP0300.jpg"],
+            "labels": ["wood pallete", "lumber", "hard wood"],
+            "group": "PTY",
+            "category": "Basic raw material"
+        },
+        {
+            "price": "800.00",
+            "location": "4 Sandown Valley Cres, Sandown, Sandton, 2031",
+            "description": "Bricks, have excess concrete and bricks",
+            "weight": "834 Kg",
+            "imgUrls": ["https://www.junktaxi.co.uk/wp-content/uploads/2021/02/Mask-Group-4.jpg"],
+            "labels": ["brick work", "building material", "stone", "sand"],
+            "group": "PTY",
+            "category": "Basic raw material"
+        }
+    ],
+    "predictedClassifications": [
+        {
+            "imgUrl": "http://southseeds.org/wp-content/uploads/2015/07/IMGP0300.jpg",
+            "predictedLabels": ["wood pallete", "lumber", "hard wood"],
+            "weight": "123 Kg",
+            "estimatedCarbonFootprint": "0.175 tons CO2/year"
+        },
+        {
+            "imgUrl": "https://www.junktaxi.co.uk/wp-content/uploads/2021/02/Mask-Group-4.jpg",
+            "predictedLabels": ["brick work", "building material", "stone", "sand"],
+            "weight": "834 Kg",
+            "estimatedCarbonFootprint": "1.325 tons CO2/year"
+        }
+    ]
+}
