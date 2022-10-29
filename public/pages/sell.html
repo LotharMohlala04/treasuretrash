@@ -159,7 +159,7 @@
 
 <script>
   function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+    var files = evt.target.files
 
    // Loop through the FileList and render image files as thumbnails.
    for (var i = 0, f; f = files[i]; i++) {
@@ -175,11 +175,7 @@
      reader.onload = (function(theFile) {
        return function(e) {
           // Render thumbnail.
-          var span = document.createElement('img');
-          span.setAttribute("src","../docs/assets/images/market/wood1.jpeg");
-          span.setAttribute("width","100%");
-          document.getElementById('list').insertBefore(span, null);
-          document.getElementById('placeholder-upload').remove()
+          
 
           var loader = document.createElement('div');
           loader.setAttribute("class","loader-container");
@@ -188,8 +184,17 @@
           document.getElementById('analysis').insertBefore(loader, null);
 
           const myTimeout = setTimeout(getAIData, 5000);
-    };
+        };
       })(f);
+
+      reader.addEventListener("load", () => {
+        // convert image file to base64 string
+        var span = document.createElement('img');
+        span.setAttribute("width","100%");
+        document.getElementById('list').insertBefore(span, null);
+        document.getElementById('placeholder-upload').remove()
+        span.setAttribute("src",reader.result);
+      }, false);
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
@@ -217,12 +222,11 @@
           document.getElementById('loader1').remove();
           
           
-              var div = document.createElement("div");
-              div.setAttribute("class","row");
-              div.innerHTML = '<div class="col-12"><p><strong>Material Identified:</strong> '+data[0].predictedLabels+'</p><p><strong>Suggested Labels:</strong> '+data[0].predictedLabels+'</p><p><strong>Estimated Weight:</strong> '+data[0].weight+'</p><p><strong>Estimated Carbon Footprint:</strong> '+data[0].estimatedCarbonFootprint+'</p></div>'
-              mainContainer.appendChild(div);
+          var div = document.createElement("div");
+          div.setAttribute("class","row");
+          div.innerHTML = '<div class="col-12"><p><strong>Suggested Labels:</strong> '+data[0].predictedLabels+'</p><p><strong>Estimated Weight:</strong> '+data[0].weight+'</p><p><strong>Estimated Carbon Footprint:</strong> '+data[0].estimatedCarbonFootprint+'</p></div>'
+          mainContainer.appendChild(div);
           
-
       }
     }
   </script>
