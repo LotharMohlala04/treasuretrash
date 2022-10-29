@@ -28,10 +28,11 @@
   </head>
   <body>
     <div class="container">
+
       <div class="row demo-row">
         <div class="col">
           <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
-            <a class="navbar-brand" href="../index.html">Treasure Trash <img src="../dist/favicon.ico"></a>
+            <a class="navbar-brand" href="./home.html">Treasure Trash <img src="../dist/favicon.ico"></a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav mr-auto">
@@ -39,12 +40,12 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listing</a>
                   <span class="dropdown-arrow"></span>
                   <ul class="dropdown-menu">
+                    <li><a href="./sell.html">Sell</a></li>
                     <li><a href="./buy.html">Buy</a></li>
                     <li><a href="#">Recycle</a></li>
                     <li><a href="#">Eliminate</a></li>
                   </ul>
-                </li>
-                <li><a href="./sell.html">Sell</a></li>
+                </li>    
                 <li><a href="#fakelink">About Us</a></li>
                </ul>
                <form class="navbar-form form-inline my-2 my-lg-0" action="#" role="search">
@@ -114,7 +115,7 @@
                 'success'
             ).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.replace("../index.html");
+                    window.location.replace("./buyer-dashboard.html");
                 }
             })
         }

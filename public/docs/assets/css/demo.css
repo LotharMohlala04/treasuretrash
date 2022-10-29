@@ -190,7 +190,7 @@ ol.linenums {
   position: absolute;
 }
 .demo-sub-section {
-  margin-top: 80px;
+  padding-top: 20px;
 }
 .demo-icons {
   font-size: 32px;
