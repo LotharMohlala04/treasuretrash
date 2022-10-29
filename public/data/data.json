@@ -11,7 +11,7 @@
             "description": "Wooden pallettes, don't want anything for them, please feel free to take them off my hands",
             "weight": "123 Kg",
             "imgUrls": ["http://southseeds.org/wp-content/uploads/2015/07/IMGP0300.jpg"],
-            "labels": ["wood pallete", "lumber", "hard wood"],
+            "labels": "wood pallete, lumber, hard wood",
             "group": "PTY",
             "category": "Basic raw material"
         },
@@ -21,7 +21,7 @@
             "description": "Bricks, have excess concrete and bricks",
             "weight": "834 Kg",
             "imgUrls": ["https://www.junktaxi.co.uk/wp-content/uploads/2021/02/Mask-Group-4.jpg"],
-            "labels": ["brick work", "building material", "stone", "sand"],
+            "labels": "brick work, building material, stone, sand",
             "group": "PTY",
             "category": "Basic raw material"
         }

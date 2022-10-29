@@ -369,3 +369,32 @@ ol.linenums {
 .photo-panel{
   margin-top: 20px;
 }
+.label-upload{
+  display: inline-block;
+  background-color: grey;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.loader {
+  border: 14px solid #f3f3f3; /* Light grey */
+  border-top: 14px solid #1abc9c; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+.loader-container{
+  padding: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Buy | Another Man's Treasure</title>
+    <title>Buy | Treasure Trash</title>
     <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
@@ -31,7 +31,7 @@
       <div class="row demo-row">
         <div class="col">
           <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
-            <a class="navbar-brand" href="../index.html">Another Man's Treasure <img src="../dist/favicon.ico"></a>
+            <a class="navbar-brand" href="../index.html">Treasure Trash <img src="../dist/favicon.ico"></a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav mr-auto">
@@ -55,39 +55,40 @@
                     </span>
                   </div>
                 </div>
+                <span style="color:white; margin-left: 20px" class="fui-user"></span>
+                <span style="color:white; padding-left: 10px; padding-top: 15px"><p>Bobo</p></span>
               </form>
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
         </div>
       </div> <!-- /row -->
 
-          <h4>Great American Bites: Telluride's Oak, The</h4>
-
-
+          <h4>Publish your trash here</h4>
       <div class="row demo-sub-section">
         <div class="col-6 ">
-            <img src="../docs/assets/images/market/wood1.jpeg" alt="Compas" width="100%" >
+          <output id="list" style="width: inherit;"></output>
+            <img src="../docs/assets/images/market/add-photo.webp" id="placeholder-upload" alt="Compas" width="100%" >
             <div class="row photo-panel">
                 <div class="col-2">
-                    <img src="../docs/assets/images/market/wood1.jpeg" alt="Compas" width="100%" >
-                </div>
-                <div class="col-2">
-                    <img src="../docs/assets/images/market/wood1.jpeg" alt="Compas" width="100%" >
-                </div>
-                <div class="col-2">
-                    <img src="../docs/assets/images/market/add-photo.png" alt="Compas" width="100%" >
+                  <input type="file" id="files" name="files[]" multiple hidden/>
+                  <label for="files" class="label-upload"> <span style="color:white; padding: 15px" class="fui-photo"></span></label>
                 </div>
             </div>
+            
+            
+
         </div>
             <div class="col-6 ">
-                <div class="tile-details">         
+                <div class="tile-details">  
+                  
+                  <output id="analysis"></output>
                         <p>Description</p>
                         <div class="form-group">
                             <textarea type="text" value="" class="form-control"></textarea>
                           </div>
                           <p>Labels</p>
                         <div class="tagsinput-primary">
-                            <input name="tagsinput" class="tagsinput" data-role="tagsinput" value="Wood, Pallets" />
+                            <input name="tagsinput" class="tagsinput" data-role="tagsinput" value="" />
                           </div>
                           <p>Location</p>
                         <div class="form-group">
@@ -108,7 +109,7 @@
       <div class="container">
         <div class="row">
           <div class="col-7">
-            <h3 class="footer-title">Another Man's Treasure</h3>
+            <h3 class="footer-title">Treasure Trash</h3>
             <p>If you are reading this, please realise that you are the real treasure.<br/>
             </p>
           </div> <!-- /col-7 -->
@@ -147,11 +148,81 @@
                 'success'
             ).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.replace("../index.html");
+                    window.location.replace("./seller-dashboard.html");
                 }
             })
         }
     
       </script>
+
+<script>
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+   // Loop through the FileList and render image files as thumbnails.
+   for (var i = 0, f; f = files[i]; i++) {
+
+     // Only process image files.
+     if (!f.type.match('image.*')) {
+       continue;
+     }
+
+     var reader = new FileReader();
+
+     // Closure to capture the file information.
+     reader.onload = (function(theFile) {
+       return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('img');
+          span.setAttribute("src","../docs/assets/images/market/wood1.jpeg");
+          span.setAttribute("width","100%");
+          document.getElementById('list').insertBefore(span, null);
+          document.getElementById('placeholder-upload').remove()
+
+          var loader = document.createElement('div');
+          loader.setAttribute("class","loader-container");
+          loader.setAttribute("id","myData");
+          loader.innerHTML = '<div class="loader" id="loader"></div><p style="text-align: center;" id="loader1">Analyzing</p></div>';
+          document.getElementById('analysis').insertBefore(loader, null);
+
+          const myTimeout = setTimeout(getAIData, 5000);
+    };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+      function getAIData() {
+      fetch('../data/data.json')
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+              appendData(data.predictedClassifications);
+          })
+          .catch(function (err) {
+              console.log('error: ' + err);
+          });
+
+      function appendData(data) {
+          var mainContainer = document.getElementById("myData");
+
+          document.getElementById('loader').remove();
+          document.getElementById('loader1').remove();
+          
+          
+              var div = document.createElement("div");
+              div.setAttribute("class","row");
+              div.innerHTML = '<div class="col-12"><p><strong>Material Identified:</strong> '+data[0].predictedLabels+'</p><p><strong>Suggested Labels:</strong> '+data[0].predictedLabels+'</p><p><strong>Estimated Weight:</strong> '+data[0].weight+'</p><p><strong>Estimated Carbon Footprint:</strong> '+data[0].estimatedCarbonFootprint+'</p></div>'
+              mainContainer.appendChild(div);
+          
+
+      }
+    }
+  </script>
   </body>
 </html>

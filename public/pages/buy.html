@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Buy | Another Man's Treasure</title>
+    <title>Buy | Treasure Trash</title>
     <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
@@ -28,7 +28,7 @@
       <div class="row demo-row">
         <div class="col">
           <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
-            <a class="navbar-brand" href="../index.html">Another Man's Treasure <img src="../dist/favicon.ico"></a>
+            <a class="navbar-brand" href="../index.html">Treasure Trash <img src="../dist/favicon.ico"></a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav mr-auto">
@@ -36,11 +36,12 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listing</a>
                   <span class="dropdown-arrow"></span>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Buy</a></li>
+                    <li><a href="./buy.html">Buy</a></li>
                     <li><a href="#">Recycle</a></li>
                     <li><a href="#">Eliminate</a></li>
                   </ul>
                 </li>
+                <li><a href="./sell.html">Sell</a></li>
                 <li><a href="#fakelink">About Us</a></li>
                </ul>
                <form class="navbar-form form-inline my-2 my-lg-0" action="#" role="search">
@@ -52,6 +53,8 @@
                     </span>
                   </div>
                 </div>
+                <span style="color:white; margin-left: 20px" class="fui-user"></span>
+                <span style="color:white; padding-left: 10px; padding-top: 15px"><p>Bobo</p></span>
               </form>
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
@@ -61,29 +64,41 @@
       <div class="row">
         <div class="col">
           <div class="demo-type-example">
-	      		<h2>Give this quartet a few</h2>
+	      		<h2>Find your fellow treasure traders</h2>
       		</div>
-          <h4>Great American Bites: Telluride's Oak, The</h4>
-          <div class="demo-type-example">
-            <h6>young-adult book-to-movie</h6>
-          </div>
+          <h4>and get buying.</h4>
         </div> 
       </div> <!-- /row -->
 
       <div class="row demo-sub-section">
         <div class="col-3">
+          <p>Category</p>
+            <label class="checkbox" for="checkboxCategory1">
+                <input type="checkbox" value="" id="checkboxCategory1" data-toggle="checkbox">
+                INDUSTRY
+              </label>
+              <label class="checkbox" for="checkboxCategory2">
+                <input type="checkbox" value="" id="checkboxCategory2" data-toggle="checkbox">
+                DAY-TO-DAY
+              </label>
+              <label class="checkbox" for="checkboxCategory3">
+                <input type="checkbox" value="" id="checkboxCategory3" data-toggle="checkbox">
+                RAW MATERIAL
+              </label>
+          <p>Entity</p>
             <label class="checkbox" for="checkbox1">
                 <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
                 SME
               </label>
-              <label class="checkbox" for="checkbox1">
-                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+              <label class="checkbox" for="checkbox2">
+                <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">
                 PTY LTD
               </label>
-              <label class="checkbox" for="checkbox1">
-                <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+              <label class="checkbox" for="checkbox3">
+                <input type="checkbox" value="" id="checkbox3" data-toggle="checkbox">
                 INFORMAL
               </label>
+              <p>Price</p>
               <div class="flex-block">
                 <p>R0</p>
                 <p>R50K</p>
@@ -98,40 +113,7 @@
               </div>
         </div>
             <div class="col-9">
-      <div class="row demo-tiles">
-        <div class="col-4">
-          <div class="tile">
-            <img src="../docs/assets/images/market/rubble1.jpeg" alt="Compas" class="tile-image-market">
-            <h3 class="tile-title">Recycle</h3>
-            <p>100% convertable to HTML/CSS layout.</p>
-            <a class="btn btn-primary btn-large btn-block" href="./buy-item.html">Buy</a>
-          </div>
-        </div>
-        <div class="col-4">
-            <div class="tile">
-              <img src="../docs/assets/images/market/rubble2.jpeg" alt="Compas" class="tile-image-market">
-              <h3 class="tile-title">Recycle</h3>
-              <p>100% convertable to HTML/CSS layout.</p>
-              <a class="btn btn-primary btn-large btn-block" href="./buy-item.html">Buy</a>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="tile">
-              <img src="../docs/assets/images/market/wood1.jpeg" alt="Compas" class="tile-image-market">
-              <h3 class="tile-title">Recycle</h3>
-              <p>100% convertable to HTML/CSS layout.</p>
-              <a class="btn btn-primary btn-large btn-block" href="./buy-item.html">Buy</a>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="tile">
-              <img src="../docs/assets/images/market/wood2.jpeg" alt="Compas" class="tile-image-market">
-              <h3 class="tile-title">Recycle</h3>
-              <p>100% convertable to HTML/CSS layout.</p>
-              <a class="btn btn-primary btn-large btn-block" href="./buy-item.html">Buy</a>
-            </div>
-          </div>
-      </div> <!-- /tiles -->
+      <div class="row demo-tiles" id="myData"></div> <!-- /tiles -->
 
     </div>
 </div>
@@ -142,7 +124,7 @@
       <div class="container">
         <div class="row">
           <div class="col-7">
-            <h3 class="footer-title">Another Man's Treasure</h3>
+            <h3 class="footer-title">Treasure Trash</h3>
             <p>If you are reading this, please realise that you are the real treasure.<br/>
             </p>
           </div> <!-- /col-7 -->
@@ -171,6 +153,29 @@
     <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
     <script src="../dist/scripts/flat-ui.js"></script>
     <script src="../docs/assets/js/application.js"></script>
+    <script>
+      fetch('../data/data.json')
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+              appendData(data.listing);
+          })
+          .catch(function (err) {
+              console.log('error: ' + err);
+          });
 
+      function appendData(data) {
+          var mainContainer = document.getElementById("myData");
+          for (var i = 0; i < data.length; i++) {
+              var div = document.createElement("div");
+              div.setAttribute("class","col-4")
+              div.innerHTML = '<div class="tile"><img src="' + data[i].imgUrls[0] + '" alt="Compas" class="tile-image-market"><h3 class="tile-title">R ' + data[i].price + '</h3><p>' + data[i].location + '</p><a class="btn btn-primary btn-large btn-block" href="./buy-item.html">Buy</a></div>'
+              mainContainer.appendChild(div);
+          }
+
+      }
+  </script>
   </body>
 </html>
